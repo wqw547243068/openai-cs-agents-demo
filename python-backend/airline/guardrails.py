@@ -11,7 +11,10 @@ from agents import (
     input_guardrail,
 )
 
-GUARDRAIL_MODEL = "gpt-4.1-mini"
+# 【2026-5-1】更新模型信息
+from load_env import base_url, api_key, model_name
+# GUARDRAIL_MODEL = "gpt-4.1-mini"
+GUARDRAIL_MODEL = model_name
 
 
 class RelevanceOutput(BaseModel):
