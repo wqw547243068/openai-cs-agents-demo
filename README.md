@@ -18,6 +18,25 @@ It is composed of two parts:
 
 ![Demo Screenshot](screenshot.jpg)
 
+
+OpenAI **Guardrails（护栏/安全防护）** 配置面板，为大模型应用添加安全校验
+- 官方[地址](https://platform.openai.com/agent-builder/edit?version=draft&workflow=wf_69fb0302aa088190b976ea4dffafb63607a0657cdb498dff)
+
+各选项含义如下：
+
+| 选项 | 功能说明 |
+|------|----------|
+| `Personally identifiable information` | PII（个人身份信息）检测，识别手机号、身份证号等敏感信息 |
+| `Moderation` | 内容审核，识别暴力、仇恨等违规内容 |
+| `Jailbreak` | 越狱检测，拦截试图绕过模型安全限制的prompt |
+| `Hallucination` | 幻觉检测，识别模型编造的虚假/不实信息 |
+| `NSFW Text` | 不良文本检测，识别色情、低俗内容 |
+| `URL Filter` | URL过滤，限制访问不安全/恶意链接 |
+| `Prompt Injection Detection` | 提示注入检测，防范通过注入指令篡改模型行为 |
+| `Custom Prompt Check` | 自定义提示词校验，按自定义规则拦截违规请求 |
+| `Continue on error` | 校验失败时是否继续执行流程 |
+
+
 ## 实践
 
 第三方解读
