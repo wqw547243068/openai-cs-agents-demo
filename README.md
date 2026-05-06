@@ -16,6 +16,9 @@ It is composed of two parts:
 
 ![Demo Screenshot](screenshot.jpg)
 
+第三方解读
+- [基于OpenAI Agents SDK构建航空客服多智能体系统实战](https://blog.csdn.net/weixin_36382073/article/details/160485519)
+
 
 ## 实践
 
