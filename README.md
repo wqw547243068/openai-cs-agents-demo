@@ -1,15 +1,17 @@
-# Customer Service Agents Demo
+# 智能客服Agent Customer Service Agents Demo
 
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 ![NextJS](https://img.shields.io/badge/Built_with-NextJS-blue)
 ![OpenAI API](https://img.shields.io/badge/Powered_by-OpenAI_API-orange)
 
+该 DEMO 基于 OpenAI Agents SDK 构建，包含两部分
+- Python后端服务：基于Agents SDK的agent编排， [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/)
+- 前端服务（Next.js）：提供可视化聊天页面，使用 [ChatKit](https://openai.github.io/chatkit-js/)
+
 This repository contains a demo of a Customer Service interface built on top of the [OpenAI Agents SDK](https://openai.github.io/openai-agents-python/).
 
 It is composed of two parts:
-
 1. A python backend that handles the agent orchestration logic, implementing the Agents SDK [customer service example](https://github.com/openai/openai-agents-python/tree/main/examples/customer_service)
-
 2. A Next.js UI allowing the visualization of the agent orchestration process and providing a chat interface. It uses [ChatKit](https://openai.github.io/chatkit-js/) to provide a high-quality chat interface.
 
 ![Demo Screenshot](screenshot.jpg)
