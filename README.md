@@ -14,6 +14,37 @@ It is composed of two parts:
 
 ![Demo Screenshot](screenshot.jpg)
 
+
+## 实践
+
+【2026-5-1】本地搭建时，出现多处错误
+
+|问题|重要性|分析|解决方案|
+|---|---|---|---|
+|更新模型api|中|OpenAI的key更新为本地key, 同时更新文件 `airline/agents.py`和`airline/guardrails.py` | 使用 .env 文件|
+|前端聊天框无法显示|高|使用了OpenAI 的ChatKit包，依赖 OpenAI的CDN服务，网络问题导致无法加载| 利用claude code重写tsx文件, ui/components下的 chatkit-panel.tsx 文件重写为 chat-panel.tsx<br>更新文件 `ui/app/layout.tsx` 和 `ui/app/page.tsx` |
+|前端页面提示agent命名错误|中|OpenAI agent工具包，命名包含空格，导致报错|更改文件（`airline/agents.py`），5-6个Agent命名更正（去掉空格）|
+|||||
+|||||
+
+模型配置文件
+
+```sh
+API_KEY = 'sk-YO9j--***'
+BASE_URL = "http://llm-proxy.test.com"
+MODEL_NAME = 'kimi-k2.5-external'
+```
+
+服务启动
+
+```sh
+# 后端服务
+uv run python -m uvicorn main:app --reload --port 8000
+# 前端服务
+npm run dev
+```
+
+
 ## How to use
 
 ### Setting your OpenAI API key
