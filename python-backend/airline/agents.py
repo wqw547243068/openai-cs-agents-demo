@@ -22,7 +22,10 @@ from .tools import (
     update_seat,
 )
 
-MODEL = "gpt-5.2"
+# [2026-5-1] 更改模型、agent命名（前端页面不支持带空格的名称）
+from load_env import base_url, api_key, model_name
+MODEL = model_name
+#MODEL = "gpt-5.2"
 
 
 def seat_services_instructions(
@@ -47,7 +50,8 @@ def seat_services_instructions(
 
 
 seat_special_services_agent = Agent[AirlineAgentChatContext](
-    name="Seat and Special Services Agent",
+    # name="Seat and Special Services Agent",
+    name="seat_special_services_agent",
     model=MODEL,
     handoff_description="Updates seats and handles medical or special service seating.",
     instructions=seat_services_instructions,
@@ -75,7 +79,8 @@ def flight_information_instructions(
 
 
 flight_information_agent = Agent[AirlineAgentChatContext](
-    name="Flight Information Agent",
+    # name="Flight Information Agent",
+    name="flight_information_agent",
     model=MODEL,
     handoff_description="Provides flight status, connection impact, and alternate options.",
     instructions=flight_information_instructions,
@@ -104,7 +109,8 @@ def booking_cancellation_instructions(
 
 
 booking_cancellation_agent = Agent[AirlineAgentChatContext](
-    name="Booking and Cancellation Agent",
+    # name="Booking and Cancellation Agent",
+    name="booking_cancellation_agent",
     model=MODEL,
     handoff_description="Handles new bookings, rebookings after delays, and cancellations.",
     instructions=booking_cancellation_instructions,
@@ -131,7 +137,8 @@ def refunds_compensation_instructions(
 
 
 refunds_compensation_agent = Agent[AirlineAgentChatContext](
-    name="Refunds and Compensation Agent",
+    # name="Refunds and Compensation Agent",
+    name="refunds_compensation_agent",
     model=MODEL,
     handoff_description="Opens compensation cases and issues hotel/meal support after delays.",
     instructions=refunds_compensation_instructions,
@@ -141,7 +148,8 @@ refunds_compensation_agent = Agent[AirlineAgentChatContext](
 
 
 faq_agent = Agent[AirlineAgentChatContext](
-    name="FAQ Agent",
+    # name="FAQ Agent",
+    name="faq_agent",
     model=MODEL,
     handoff_description="Answers common questions about policies, baggage, seats, and compensation.",
     instructions=f"""{RECOMMENDED_PROMPT_PREFIX}
@@ -156,7 +164,8 @@ faq_agent = Agent[AirlineAgentChatContext](
 
 
 triage_agent = Agent[AirlineAgentChatContext](
-    name="Triage Agent",
+    # name="Triage Agent",
+    name="triage_agent",
     model=MODEL,
     handoff_description="Delegates requests to the right specialist agent (flight info, booking, seats, FAQ, baggage, compensation).",
     instructions=(
