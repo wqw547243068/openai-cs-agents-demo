@@ -16,11 +16,14 @@ It is composed of two parts:
 
 ![Demo Screenshot](screenshot.jpg)
 
+## 实践
+
 第三方解读
 - [基于OpenAI Agents SDK构建航空客服多智能体系统实战](https://blog.csdn.net/weixin_36382073/article/details/160485519)
 
 
-## 实践
+整体框架
+- [技术博客](https://wqw547243068.github.io/ics#2026-4-24openai-%E5%AE%A2%E6%9C%8D%E6%99%BA%E8%83%BD%E4%BD%93)
 
 【2026-5-1】本地搭建时，出现多处错误
 
